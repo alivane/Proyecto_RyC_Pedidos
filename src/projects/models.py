@@ -1,19 +1,14 @@
 from projects import db, bcrypt
 
 
-class Users(db.Model):
+class Pedidos(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column(db.String, nullable=False)
-    password = db.Column(db.String, nullable=False)
-    mail = db.Column(db.String, nullable=False)
+    name_user = db.Column(db.String, nullable=False)
+    rut = db.Column(db.String, nullable=False)
+    phone = db.Column(db.String, nullable=False)
+    address = db.Column(db.String, nullable=False)
+    name_menu = db.Column(db.String, nullable=False)
+    terminated = db.Column(db.Boolean, nullable=False)
 
     def __init__(self, **kwargs):
-        super(Users, self).__init__(**kwargs)
-        self.password = self.generate_password_hash(**kwargs)
-    
-    def generate_password_hash(self, **kwargs):
-        if 'password' in kwargs:
-            return bcrypt.generate_password_hash(kwargs['password']).decode()
-
-        return None
-        
+        super(Pedidos, self).__init__(**kwargs)

@@ -1,12 +1,12 @@
+from marshmallow import fields
 from projects import ma
-from projects.models import Users
+from projects.models import Pedidos
 
 
-class UserSchema(ma.SQLAlchemyAutoSchema):
+class PedidosSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
-        model = Users
+        model = Pedidos
         load_instance = True
-        load_only = ('password', )
 
 
-user_schema = UserSchema()
+pedidos_schema = PedidosSchema()
