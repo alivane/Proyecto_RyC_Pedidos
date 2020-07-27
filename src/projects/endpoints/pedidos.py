@@ -88,3 +88,10 @@ def update_pedidos(payload, id):
     db.session.commit()
 
     return pedidos_schema.dump(pedidos), 200
+
+@blueprint.route('/get_pedido_id/<id>', methods=['GET', 'POST'])
+@authentificater
+def get_one_week_menu(payload, id):
+    pedidos = Pedidos.query.get_or_404(id)
+
+    return pedidos_schema.dump(pedidos), 200
