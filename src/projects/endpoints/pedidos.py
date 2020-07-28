@@ -93,5 +93,5 @@ def update_pedidos(payload, id):
 @authentificater
 def get_one_week_menu(payload, id):
     pedidos = Pedidos.query.get_or_404(id)
-
     return pedidos_schema.dump(pedidos), 200
+    
