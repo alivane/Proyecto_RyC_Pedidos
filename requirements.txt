@@ -2,7 +2,7 @@ flask==1.1.2
 flask-sqlalchemy==2.4.3
 psycopg2-binary==2.8.5
 flask-migrate==2.5.3
-PyJWT==1.7.0
+PyJWT==2.4.0
 marshmallow==3.6.1
 flask-marshmallow==0.13.0
 marshmallow-sqlalchemy==0.23.1
